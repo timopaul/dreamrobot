@@ -1,0 +1,42 @@
+{
+    "name": "timopaul/dreamrobot",
+    "description": "DreamRobot PHP SDK",
+    "keywords": [
+        "dreamrobot",
+        "api",
+        "sdk"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Timo Paul",
+            "email": "mail@timopaul.biz",
+            "homepage": "https://timopaul.biz/",
+            "role": "maintainer and developer"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/timopaul/dreamrobot",
+        "issues": "https://github.com/timopaul/dreamrobot/issues"
+    },
+    "require": {
+        "php": "~7.1 || ~7.2 || ~7.3",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "TimoPaul\\DreamRobot\\": "src/"
+        }
+    },
+    "autoload-dev": {
+    },
+    "prefer-stable": true,
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        }
+    }
+}
