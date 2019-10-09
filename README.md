@@ -16,6 +16,6 @@ $client = CurlClient::getInstance($user, $pass);
 $request = $client->createRequest(ReadPortalAccountsRequest::class);
 
 // send HTTP request and get response object
-$response = $client->request($request);
+$response = $client->send($request);
 
 ```
