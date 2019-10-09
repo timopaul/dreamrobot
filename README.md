@@ -1,6 +1,5 @@
-# DreamRobot
-DreamRobot PHP SDK
-
+# DreamRobot REST API PHP SDK
+This library contains a wrapper for the DreamRobot REST API. It is not fully implemented yet, some record types and functions are missing.
 
 ## How to use
 
