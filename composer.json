@@ -20,9 +20,7 @@
         "issues": "https://github.com/timopaul/dreamrobot/issues"
     },
     "require": {
-        "php": "~7.1 || ~7.2 || ~7.3",
-        "ext-curl": "*",
-        "ext-json": "*"
+        "php": "~7.1 || ~7.2 || ~7.3"
     },
     "require-dev": {
     },
