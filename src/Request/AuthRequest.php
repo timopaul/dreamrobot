@@ -21,7 +21,7 @@ class AuthRequest extends PostRequest
     public function __construct()
     {
         parent::__construct();
-        $this->setData('grant_type', 'client_credentials');
+        $this->addData('grant_type', 'client_credentials');
     }
     
 }

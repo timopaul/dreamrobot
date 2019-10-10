@@ -103,11 +103,20 @@ abstract class AbstractRequest
     }
     
     /**
-     * @param   string $key
-     * @param   string $value
+     * @param   array $datas
      * @return  void
      */
-    public function setData(string $key, string $value) : void
+    public function setDatas(array $datas) : void
+    {
+        $this->data = $datas;
+    }
+    
+    /**
+     * @param   string $key
+     * @param   mixed $value
+     * @return  void
+     */
+    public function addData(string $key, $value) : void
     {
         $this->data[$key] = $value;
     }
@@ -129,6 +138,24 @@ abstract class AbstractRequest
     public function setOption(string $key, string $value) : void
     {
         $this->options[$key] = $value;
+    }
+    
+    
+    public function toUtf8($text) {
+      if (is_array($text)) {
+        foreach ($text as $k => $v) {
+          $text[$k] = $this->toUtf8($v);
+        }
+        return $text;
+      }
+      $charset = mb_detect_encoding($text, mb_detect_order(), true);
+      return iconv($charset, 'UTF-8', $text);
+    }
+    
+    
+    public function toJson(array $str) : string
+    {
+      return json_encode($str, JSON_NUMERIC_CHECK);
     }
 
     

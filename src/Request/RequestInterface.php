@@ -48,7 +48,14 @@ interface RequestInterface
      * @param   string $value
      * @return  void
      */
-    public function setData(string $key, string $value) : void;
+    public function setDatas(array $datas) : void;
+    
+    /**
+     * @param   string $key
+     * @param   mixed $value
+     * @return  void
+     */
+    public function addData(string $key, $value) : void;
     
     /**
      * @return  string
