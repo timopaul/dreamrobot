@@ -22,5 +22,5 @@ interface ClientInterface
      * @return  stdClass The response body
      * @throws  Exception\RequestFailedException
      */
-    public function request(Request $request) : stdClass;
+    public function send(Request $request) : stdClass;
 }
