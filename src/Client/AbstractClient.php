@@ -28,31 +28,10 @@ abstract class AbstractClient
     protected $apiUrl;
 
     /**
-     * @var string
      */
-    protected $user;
-
-    /**
-     * @var string
-     */
-    protected $password;
-
-    /**
-     * @param string $user
-     * @param string $password
-     * @param string $customer
-     */
-    public function __construct(string $user, string $password)
+    public function __construct()
     {
-        $this->user        = $user;
-        $this->password    = $password;
         $this->apiUrl = sprintf(static::API_URL, SHOPMODULE_DREAMROBOT_API_VERSION);
-    }
-    
-    
-    protected function getUserPwd() : string
-    {
-        return $this->user . ':' . $this->password;
     }
     
     

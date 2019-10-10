@@ -48,8 +48,8 @@ class Curl extends AbstractClient implements ClientInterface
      */
     public function __construct(string $user, string $password)
     {
-        parent::__construct($user, $password);
-        $this->auth();
+        parent::__construct();
+        $this->auth($user, $password);
     }
     
     static public function getInstance(string $user, string $password) : self
@@ -67,12 +67,12 @@ class Curl extends AbstractClient implements ClientInterface
      * @return void
      * @throws RequestFailedException
      */
-    public function auth() : void
+    public function auth(string $user, string $password) : void
     {
         $request = new AuthRequest();
-        $request->setoption(CURLOPT_USERPWD, $this->getUserPwd());
+        $request->setoption(CURLOPT_USERPWD, $user . ':' . $password);
         
-        $response = $this->request($request);
+        $response = $this->send($request);
         
         if ( ! property_exists($response, 'access_token')) {
             $msg = 'Unable to get access token from request!';
@@ -83,7 +83,7 @@ class Curl extends AbstractClient implements ClientInterface
     }
     
     
-    public function request(Request $request) : stdClass
+    public function send(Request $request) : stdClass
     {
         $this->request = $request;
         
