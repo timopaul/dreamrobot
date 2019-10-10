@@ -13,6 +13,7 @@ use TimoPaul\DreamRobot\Request\Request;
  */
 abstract class PostRequest extends Request
 {
+    private $body;
     
     /**
      * @param   array $data
@@ -20,7 +21,7 @@ abstract class PostRequest extends Request
      */
     protected function buildRequestBody($data) : string
     {
-        return json_encode($data);
+        return $this->toJson($this->toUtf8($data));
     }
     
     /**
@@ -29,8 +30,8 @@ abstract class PostRequest extends Request
     public function getOptions() : array
     {
         $options = parent::getOptions();
-        $postData = $this->buildRequestBody($this->getDatas());
-        $options[CURLOPT_POSTFIELDS] = $postData;
+        $this->body = $this->buildRequestBody($this->getDatas());
+        $options[CURLOPT_POSTFIELDS] = $this->body;
         return $options;
     }
     
