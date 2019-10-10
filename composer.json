@@ -19,22 +19,13 @@
         "source": "https://github.com/timopaul/dreamrobot",
         "issues": "https://github.com/timopaul/dreamrobot/issues"
     },
+    "minimum-stability": "dev",
     "require": {
         "php": "~7.1 || ~7.2 || ~7.3"
     },
-    "require-dev": {
-    },
     "autoload": {
-        "psr-4": {
+        "psr-0": {
             "TimoPaul\\DreamRobot\\": "src/"
-        }
-    },
-    "autoload-dev": {
-    },
-    "prefer-stable": true,
-    "config": {
-        "preferred-install": {
-            "*": "dist"
         }
     }
 }
