@@ -155,7 +155,7 @@ abstract class AbstractRequest
     
     public function toJson(array $str) : string
     {
-      return json_encode($str, JSON_NUMERIC_CHECK);
+      return json_encode($str, JSON_PRESERVE_ZERO_FRACTION);
     }
 
     
