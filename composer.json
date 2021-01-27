@@ -24,8 +24,9 @@
         "php": "~7.1 || ~7.2 || ~7.3"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "TimoPaul\\DreamRobot\\": "src/"
         }
-    }
+    },
+    "prefer-stable": true
 }
