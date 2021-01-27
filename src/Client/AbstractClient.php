@@ -11,7 +11,7 @@ use stdClass;
  *
  * @author   Timo Paul <mail@timopaul.biz>
  * @license  http://www.opensource.org/licenses/mit-license MIT License
- * @link     https://github.com/mjaschen/collmex
+ * @link     https://github.com/timopaul/dreamrobot
  */
 abstract class AbstractClient
 {
